@@ -1,0 +1,55 @@
+ErrorMsg = err.Error() ### err to string 
+----------------------------------------------------------------------------------------------------------------
+http.Redirect(w, r, "/error", http.StatusSeeOther) ### allow redirect post or get request
+about redirect:
+https://stackoverflow.com/questions/35934298/how-to-redirect-to-a-url
+https://stackoverflow.com/questions/58448184/is-it-possible-to-redirect-a-page-with-new-url-after-executing-template-in-go
+----------------------------------------------------------------------------------------------------------------
+### concatenate string example ###
+StringGetSa strings.Builder ### declare Builder
+StringGetSa.WriteString(el.Namespace + " --- " + el.Name + "<br>") ### take log println and concatenate it
+Message: StringGetSa.String()  ### put all concatenated strings to var struct
+StringGetSa.Reset() ### reset string builder to avoid concatenate after refresh page
+----------------------------------------------------------------------------------------------------------------
+### buttons with select list ###
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-10">
+      <form action="/createcrbmanager" method="post">
+        <select name="choice1" style="font-size:18pt;height:40px;width:410px;" required>
+          <option value="">Service Account</option>
+          {{range $key, $value := .SaMap}}<option>
+          {{ $key }} {{ $value }}
+          {{end}}
+        </option>
+        </select>
+        <select name="choice1" style="font-size:18pt;height:40px;width:410px;" required>
+          <option value="">Cluster Role</option>
+          {{range .CrbSlice}}<option>
+          {{ . }}
+          {{end}}
+        </option>
+        </select>
+        <input type="submit" value="Create CRB">
+      </form>
+    </div>
+  </div>
+	----------------------------------------------------------------------------------------------------------------
+Do logging for code ex: log.Printl funcs, output for iteration, logging error this will help you debug your application in future
+----------------------------------------------------------------------------------------------------------------
+Add comments try to describe what exactly do this part or func
+----------------------------------------------------------------------------------------------------------------
+Clear your vars ex: slice to nil (sl1 = nil) or reset string Builder String.reset or clear map m0 = make(map[string][]string)
+----------------------------------------------------------------------------------------------------------------
+Take notes in CHANGELOG.md or use smt else
+----------------------------------------------------------------------------------------------------------------
+Do global var to avoid repeat code in your files
+----------------------------------------------------------------------------------------------------------------
+Do health checks it helps to know application is running
+----------------------------------------------------------------------------------------------------------------
+If you have a global var ( var myvar string ) do not reassign for this var like myvar := "mystring" use myvar = "mystring" ### golang will highlight it with green
+----------------------------------------------------------------------------------------------------------------
+if you get string from file do not forget to del /n from string
+tmp = strings.ReplaceAll(strtoken, "Bearer ", "") ### if you want to delete smt from string use for it Replace not Trim, example show how to delete Bearer and space before token
+
+
