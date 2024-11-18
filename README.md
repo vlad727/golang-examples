@@ -5,4 +5,4 @@
 * How to use MergePatchType or JSONPatchType
 * How to use hostPath and read config from nodes
 * How to redirect after post request 
-
+* How to golang templates html range over slice and map
