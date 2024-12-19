@@ -1,0 +1,8 @@
+var (
+	logger = log.New(os.Stdout, "", log.LstdFlags|log.Lshortfile)
+)
+
+func GetSa(w http.ResponseWriter, r *http.Request) {
+	defer logger.Println("INFO: Func GetSa finished")
+	logger.Println("INFO: Func GetSa started")
+	
